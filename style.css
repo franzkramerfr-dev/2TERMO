@@ -9,11 +9,11 @@ div{
 }
 .destaque{
 
-    color: rgb(0, 132, 11);
+    color: rgb(16, 218, 66);
     font-size: 24px;
 }
 .card button{
-    background-color: rgb(23, 194, 83);
+    background-color: rgb(177, 180, 178);
     border-radius: 20px;
     width: 200px;
     height: 200px;
@@ -29,7 +29,7 @@ div{
 
 button a{
     color: rgb(220, 217, 217);
-    background-color: rgb(10, 101, 4);
+    background-color: rgb(80, 82, 80);
     border-radius: 20px;
     display: flex;
     justify-content: center;
