@@ -1,0 +1,20 @@
+body{
+    background-color: #d6cece; 
+}
+
+.titulo{
+    color:rgb(255, 0, 0);
+    background-color: #532929;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 200px;
+    height: 100px;
+    
+}
+
+.name{
+    color:red;
+
+    
+
+}
