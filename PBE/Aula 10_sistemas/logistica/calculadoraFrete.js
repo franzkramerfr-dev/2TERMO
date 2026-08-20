@@ -4,8 +4,8 @@ function calcularBase(km) {
 }
 
 function calcularSeguro(valorCarga) {
-    const seguroTransportadora = 0.99
-    return valorCarga * 0.99
+    const seguroTransportadora = 0.01
+    return valorCarga * seguroTransportadora
 }
 
 function verificarPrazo(km) {
