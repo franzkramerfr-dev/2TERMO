@@ -27,8 +27,8 @@ const areaTotal2 = calcularArea(largura2, comprimento2)
 const areaTotal3 = calcularArea(largura3, comprimento3)
 
 console.log(
-    `A área total do terreno 1 é ${areaTotal1}m^2\n
-    A área total do terreno 2 é ${areaTotal2}m^2\n
-    A área total do terreno 3 é ${areaTotal3}m^2\n`
+    `A área total do terreno 1 é ${areaTotal1}m²\n
+    A área total do terreno 2 é ${areaTotal2}m²\n
+    A área total do terreno 3 é ${areaTotal3}m²\n`
     
 )

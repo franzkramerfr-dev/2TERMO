@@ -10,5 +10,17 @@
 
 const entrada = ('readline-sync')
 
-cinema ["Vingadores", "Cidade dos Homens", ""
+const cinema = [
+    {titulo: "Dumbo", classificacao: 0},
+    {titulo: "Vingadores", classificacao: 12},
+    {titulo: "O Exorcista", classificacao: 18}
+];
+    const idadeUser = 14;
+    for (let i = 0; i < cinema.length; i++) {
+        if (idadeUser >= cinema[i].classificacao) {
+            console.log(`O usuário pode assistir o filme: ${cinema[i].titulo}`)
+        } else {
+            console.log(`O usuário não pode assistir o filme: ${cinema[i].titulo}`)
+        }
+    }
     
