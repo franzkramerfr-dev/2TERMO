@@ -1,0 +1,41 @@
+body{
+    background-color: #ca821552;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+font-size: 20px;
+display: flex;
+    /* Determina a posição dos elementos*/
+background-color: #e49e43a9;
+    /* Muda a cor de fundo*/
+width: 95%;
+    /* Cobre 100% da área*/
+padding: 40px;
+    /* Altera o espaçamento da tela*/
+justify-content: space-between;
+    /*Deixa os elementos sepa*/
+border-radius: 12px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.center{
+    text-align: center;
+}
+
+header nav ul {
+    gap: 24px;
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+img {
+
+left: 400px;
+position: relative;
+}
+
+.tec{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
