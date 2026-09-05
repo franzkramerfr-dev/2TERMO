@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nome": "Ana",
+    "setor": "Usinagem"
+  },
+  {
+    "id": 2,
+    "nome": "Rafael",
+    "setor": "Soldagem"
+  },
+  {
+    "id": 3,
+    "nome": "Rose",
+    "setor": "Eletrica"
+  },
+  {
+    "id": 4,
+    "nome": "Julia",
+    "setor": "Ferramentaria"
+  },
+  {
+    "id": 5,
+    "nome": "Jonathan",
+    "setor": "Mecânica"
+  }
+]
