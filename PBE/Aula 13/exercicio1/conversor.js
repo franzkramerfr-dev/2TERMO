@@ -1,8 +1,7 @@
-function converter (calculoMoeda) {
-    valorDolar = 5;
-    return calculoMoeda * valorDolar;
+function converterDolarParaReal (valorDolar) {
+    return valorDolar * 5;
 };
 
 module.exports = {
-    converter
+    converterDolarParaReal
 };

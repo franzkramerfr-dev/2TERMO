@@ -1,11 +1,11 @@
 const entrada = require('readline-sync');
 const conversor = require('./conversor');
 
-const calculoMoeda = entrada.question("Qual o valor em Reais que deseja converter em Dolar? ")
+const calculoMoeda = entrada.questionFloat("Qual o valor em Dolares que deseja converter em Reais? ")
 
 function calcular (converter){
     console.log("--- Quantidade Convertida ---")
-    console.log(`O valor convertido em Dolar é ${conversor.converter(calculoMoeda)}`);
+    console.log(`O valor convertido em Reais é ${conversor.converterDolarParaReal(calculoMoeda)}`);
 }
 
 calcular(Number(calculoMoeda));
