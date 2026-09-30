@@ -15,4 +15,4 @@ const media = acumulador / 6
 
 console.log('--- RELATORIO FINAL ---')
 console.log(`Total de defeitos: ${acumulador}`);
-console.log(`Media de defeitos: ${media.toFixed[2]}`)
+console.log(`Media de defeitos: ${media.toFixed(2)}`)
