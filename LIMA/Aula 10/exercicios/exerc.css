@@ -1,0 +1,31 @@
+.equipe {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    gap: 30px;
+    list-style: none;
+    /* justify-content: space-evenly; */
+    padding: 10px 8%;
+    align-items: center;
+
+    
+}
+
+.ana {
+    display: flex;
+    align-items: flex-end;
+}
+
+.bruno {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 4%;
+    height: 200px;
+}
+
+.carla{
+    display: flex;
+    align-items: flex-start;
+    padding: auto;
+    height: 300px;
+}
