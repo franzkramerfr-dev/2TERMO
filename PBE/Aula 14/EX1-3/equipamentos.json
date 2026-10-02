@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nome": "Britadeira",
+    "setor": "08-A",
+    "operacional": true
+  },
+  {
+    "id": 2,
+    "nome": "Martelo",
+    "setor": "09-B",
+    "operacional": true
+  },
+  {
+    "id": 3,
+    "nome": "Furadeira",
+    "setor": "2-B",
+    "operacional": false
+  }
+]
