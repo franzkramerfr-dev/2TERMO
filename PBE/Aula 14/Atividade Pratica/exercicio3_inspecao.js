@@ -18,3 +18,4 @@ fs.writeFileSync('inspecao_qualidade.json', JSON.stringify(relatorioInspecao, nu
 console.log("=== RELATÓRIO DE QUALIDADE GERADO ===");
 console.log(`Status do Lote: ${aprovado ? "APROVADO" : "REPROVADO"}`);
 console.log("Arquivo 'inspecao_qualidade.json' gravado em disco.");
+//
