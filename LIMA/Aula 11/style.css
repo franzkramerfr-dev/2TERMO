@@ -1,0 +1,93 @@
+.grid-lista {
+    display: flex;
+    /* grid-template-columns: 2fr 1fr; */
+    grid-template-columns: repeat(3,1fr);
+    gap: 43px;
+    list-style: none;
+    margin:0;
+    padding: 0;
+    height: 100px;
+    
+    
+
+}
+
+.grid-img {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(auto, mixmax(300px, 1fr));
+    gap: 23px;
+    list-style: none;
+    padding: 0;
+}
+/* Celular */
+@media (max-width: 1024px) {
+    .grid-img {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* 
+Tablet */
+@media (max-width: 768px) {
+    .grid-img {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+/* Computador */
+@media (max-width: 500px) {
+    .grid-img {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* Exemplo com FlexBox */
+
+@media (max-width: 800px){
+    .grid-lista{
+        flex-direction: column;
+        gap: 23px;
+
+    }
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.menu {
+    display: flex;
+    gap: 23px;
+    list-style: none;
+    justify-content: center;
+}
+
+
+.grid-teste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+
+}
+
+@media (max-width: 800px) {
+    .grid-teste {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-teste {
+        grid-template-columns: 1fr;
+    }
+    
+}
