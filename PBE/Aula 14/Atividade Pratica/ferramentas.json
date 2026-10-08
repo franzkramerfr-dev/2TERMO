@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "Martelo",
+    "qtd": 3,
+    "custoUnitario": 34
+  },
+  {
+    "nome": "Britadeira",
+    "qtd": 3,
+    "custoUnitario": 304
+  }
+]
