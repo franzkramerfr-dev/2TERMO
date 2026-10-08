@@ -1,14 +1,14 @@
 *{
    color:white;
         font-family: "Poppins", sans-serif;
-        font-size: 40px;
         font-style: normal;
-        }
-
-body{
-    background-color: #9a887a;
-    margin: 0;
-    padding: 0;
+    }
+    
+    body{
+        background-color: #9a887a;
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
  
 }
 
@@ -17,7 +17,7 @@ body{
     font-weight: bold;
     display: flex;
     margin-right: auto;
-    font-size: 90px;
+    font-size: 60px;
     
 
 } 
@@ -66,7 +66,6 @@ header{
         font-weight: bold;
         font-size: 40px;
         line-height: 40px;
-        padding: 0;
         margin: 40px;
         width: 700px;
     }
@@ -94,15 +93,14 @@ header{
     }
 
     .btn{
-        text-align: right;
-        position: right;
-        display: flex;
-        margin-left: 1400px;
+  
+        margin : 10px;
+        display: grid;
         padding: 10px;
         background-color: #5a321b;
         color: white;
         font-weight: bold;
-        
+        font-size: 30px;
     }
 
     .btnSaibaMais{
