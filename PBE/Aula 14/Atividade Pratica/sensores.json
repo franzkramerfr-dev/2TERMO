@@ -1,0 +1,20 @@
+[
+  {
+    "id": 101,
+    "tipo": "Temperatura",
+    "leituraAtual": 40.8,
+    "status": "Operando"
+  },
+  {
+    "id": 101,
+    "tipo": "Pressao",
+    "leituraAtual": 6,
+    "status": "Operando"
+  },
+  {
+    "id": 101,
+    "tipo": "Temperatura",
+    "leituraAtual": 140.9,
+    "status": "Alerta!"
+  }
+]
