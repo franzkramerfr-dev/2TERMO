@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/inicio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitcount+Ink:wght@100..900&family=Bungee&family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="acess/Logo Minimalista de Café com Vapor.png" type="image/x-icon">
     <title>SmartCoffe - Cafeteria Inteligente</title>
 </head>
 <body>
     <header>
-        <figure>
-            <img src="" alt="Logo SmartCoffee">
+        <figure">
+            <img class="logo" src="acess/Logo Minimalista de Café em Marrom e Creme.png" alt="Logo SmartCoffee" ">
         </figure>
-        <h1>SmartCoffee</h1>
+        <img class="tumbHeader" src="/acess/Logo Smartcoffee em Marrom e Creme.png" alt="Cabeçalho">
         <nav>
             <ul class="menu">
                 <li><a href="/inicio.html">Início</a></li>
@@ -28,37 +34,133 @@
     </header>
 
     <section id="inicio" class="home">
-        <h2>SEU CAFÉ PERSONALIZADO ATÉ O ULTIMO DETALHE!</h2>
+        <h2 class="texto-digitando">SEU CAFÉ PERSONALIZADO ATÉ O ULTIMO DETALHE!</h2>
         <h3 class="Subtitulo">CONECTE-SE AO SABOR!</h3>
-        <figure class="photo.smart">
-            <img src="" alt="Foto da Smartcoffee">
+        <figure>
+            <img class="photoSmart" src="acess/SmartCoffee_sem_bordas.png" alt="Foto da Smartcoffee">
         </figure>
         
-        <button><a href="/produtos.html">Acessar Cardápio -></a></button>
+        <button><a href="/produtos.html">ACESSAR CARDÁPIO -></a></button>
         </section>
-
-        <h3 class="SobreNos">Sobre Nós</h3>
+        <section class="backSobre">
+             <h3 class="SobreNos">Sobre Nós</h3>
         <section class="Sobre">
            
         <article class="cardTexto">
 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, ducimus similique recusandae suscipit in debitis? Quidem quod exercitationem eius laudantium qui explicabo aspernatur, cupiditate enim distinctio expedita aperiam, molestias quos.</p>
+            <p>A SmartCoffee oferece uma experiência única para os amantes de café, unindo qualidade, praticidade e personalização. <br> <br>
+            Nosso objetivo é tornar cada xícara um momento especial, com sabor e inovação em cada detalhe.</p> <br>
             <button><a href="/sobre.html">Saiba Mais -></a></button>
       
         </article>
         </section>
+        </section>
+       
        
         
 
 
     <footer>
         <p>
-            WebSite desenvolvido por Franz Kramer da Silva
+        <footer class="footer">
+            <div class="footer-container">
+        
+                <!-- Identidade do site -->
+                <div class="footer-brand">
+                    <h2>SMARTCOFFEE</h2>
+                    <p>A cafeteria inteligênte que conecta você com o futuro.</p>
+                </div>
+        
+                <!-- Navegação -->
+                <div class="footer-links">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="/inicio.html">Início</a></li>
+                 <li><a href="/clientes.html">Clientes</a></li>
+                <li><a href="/produtos.html">Produtos</a></li>
+                <li><a href="/funcionarios.html">Funcionários</a></li>
+                <li><a href="/pagamentos.html">Pagamentos</a></li>
+                <li><a href="/estoque.html">Estoque</a></li>
+                <li><a href="/delivery.html">Delivery</a></li>
+                <li><a href="/programafid.html">Programa Fidelidade</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Redes sociais -->
+                <div class="footer-social">
+                    <h3>Conecte-se</h3>
+        
+                    <div class="social-icons">
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+        
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+        
+                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="clientes.html" class="contact-link">Entre em Contato</a>
+                        </li>
+                    </ul>
+                   
+                        
+                </div>
+        
+            </div>
+        
+            <!-- Parte inferior -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartCoffee. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Franz Kramer.</p>
+            </div>
+        </footer>
+        
+        <!-- Biblioteca de ícones -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+
         </p>
     </footer>
 
 
+    <script>
+        const titulo = document.querySelector(".texto-digitando");
+        const frase = "SEU CAFÉ PERSONALIZADO ATÉ O ÚLTIMO DETALHE!";
+
+        let indice = 0;
+        let apagando = false;
+
+        function digitar() {
+            titulo.textContent = frase.substring(0, indice);
+
+            if (!apagando && indice === frase.length) {
+                apagando = true;
+                setTimeout(digitar, 1500);
+                return;
+            }
+
+            if (apagando && indice === 0) {
+                apagando = false;
+                setTimeout(digitar, 500);
+                return;
+            }
+
+            indice += apagando ? -1 : 1;
+
+            setTimeout(digitar, apagando ? 45 : 90);
+        }
+
+        digitar();
+    </script>
+
 
     
 </body>
+
+
 </html>
