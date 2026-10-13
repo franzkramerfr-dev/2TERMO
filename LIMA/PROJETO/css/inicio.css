@@ -7,6 +7,7 @@
 
 
 
+
 header a {
   display: inline-block;
   text-decoration: none;
@@ -17,20 +18,6 @@ header a {
 header a:hover {
   color: #ffffff;
   transform: translateY(-4px);
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  position: relative;
-
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../acess/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .tumbHeader {
@@ -62,31 +49,36 @@ body {
   }
 }
 
-.photoSmart {
-  display: flex;
-  margin-left: 760px;
-  border-radius: 40px;
-  
-}
+
 
 header {
-  background-color: #4d2612;
+  background: linear-gradient(to bottom, #4d2612, #000000);
   color: #efb3b3;
   padding: 20px 30px;
   position: relative;
+
 
   a {
     color: #e0abab;
     text-decoration: none;
   }
 }
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
 
-header h1 {
-  text-align: center;
-  margin-top: -15px;
-  padding: 0;
-
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../acess/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
+
+
 
 
 .texto-digitando {
@@ -192,7 +184,8 @@ footer {
   /* FOOTER */
   .footer {
     margin-top: 0;
-    background-color: #5a321b;
+    
+    background: linear-gradient(to bottom, #4d2612, #000000);
     color: #ffffff;
     padding: 45px 8% 20px;
     font-family: Arial, sans-serif;
