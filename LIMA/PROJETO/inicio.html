@@ -14,8 +14,23 @@
 </head>
 <body>
     <header>
+        <div class="footer-social">
+            <h3>Bem-vindo</h3> 
+        
+            <div class="social-icons">
+                <a href="https://github.com/franzkramerfr-dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+        
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+        
+                
+                </a>
+            </div>
         <figure">
-            <img class="logo" src="acess/Logo Minimalista de Café em Marrom e Creme.png" alt="Logo SmartCoffee" ">
+            <img class="logo" src="acess/logo_fundo_4d2612.png" alt="Logo SmartCoffee" ">
         </figure>
         <img class="tumbHeader" src="/acess/Logo Smartcoffee em Marrom e Creme.png" alt="Cabeçalho">
         <nav>
@@ -35,33 +50,91 @@
 
     <section id="inicio" class="home">
         <h2 class="texto-digitando">SEU CAFÉ PERSONALIZADO ATÉ O ULTIMO DETALHE!</h2>
-        <h3 class="Subtitulo">CONECTE-SE AO SABOR!</h3>
-        <figure>
-            <img class="photoSmart" src="acess/SmartCoffee_sem_bordas.png" alt="Foto da Smartcoffee">
-        </figure>
+        <h3 class="Subtitulo">▼ CONECTE-SE AO SABOR ▼</h3>
         
-        <button><a href="/produtos.html">ACESSAR CARDÁPIO -></a></button>
+       
+        <section class="carrossel" aria-label="Destaques">
+        
+            <section class="carrossel-container" aria-label="Slides">
+        
+                <article class="slide ativo">
+                    <figure>
+                        <img src="acess/cafe,png.jpg" alt="Cafés">
+                        <figcaption class="conteudo-slide">
+                            <h2>CAFÉS</h2>
+                            <a href="produtos.html" class="btn-slide">Ver produtos</a>
+                        </figcaption>
+                    </figure>
+                </article>
+        
+                <article class="slide">
+                    <figure>
+                        <img src="acess/salgados.jpg" alt="Salgados">
+                        <figcaption class="conteudo-slide">
+                            <h2>SALGADOS</h2>
+                            <a href="produtos.html" class="btn-slide">Ver produtos</a>
+                        </figcaption>
+                    </figure>
+                </article>
+        
+                <article class="slide">
+                    <figure>
+                        <img src="acess/sobremesas.png" alt="Sobremesas">
+                        <figcaption class="conteudo-slide">
+                            <h2>SOBREMESAS</h2>
+                            <a href="produtos.html" class="btn-slide">Ver produtos</a>
+                        </figcaption>
+                    </figure>
+                </article>
+        
+                <article class="slide">
+                    <figure>
+                        <img src="acess/bebidas.png" alt="Bebidas geladas">
+                        <figcaption class="conteudo-slide">
+                            <h2>BEBIDAS GELADAS</h2>
+                            <a href="produtos.html" class="btn-slide">Ver produtos</a>
+                        </figcaption>
+                    </figure>
+                </article>
+        
+            </section>
+        
+            <button class="anterior" aria-label="Slide anterior">&#10094;</button>
+            <button class="proximo" aria-label="Próximo slide">&#10095;</button>
+        
         </section>
-        <section class="backSobre">
-             <h3 class="SobreNos">Sobre Nós</h3>
+        
+       
+        
+        
+        <button class="cardapio"><a href="/produtos.html">ACESSAR CARDÁPIO -></a></button>
+    <section class="backSobre">
+        <h3 class="SobreNos">Sobre Nós</h3>
+    
         <section class="Sobre">
-           
-        <article class="cardTexto">
-
-            <p>A SmartCoffee oferece uma experiência única para os amantes de café, unindo qualidade, praticidade e personalização. <br> <br>
-            Nosso objetivo é tornar cada xícara um momento especial, com sabor e inovação em cada detalhe.</p> <br>
-            <button><a href="/sobre.html">Saiba Mais -></a></button>
-      
-        </article>
+            <article class="cardTexto">
+                <p>
+                    A SmartCoffee oferece uma experiência única para
+                    os amantes de café, unindo qualidade, praticidade e
+                    personalização.
+                    <br><br>
+                    Nosso objetivo é tornar cada xícara um momento
+                    especial, com sabor e inovação em cada detalhe.
+                </p> <br>
+    
+                <button>
+                    <a href="/sobre.html">Saiba Mais -&gt;</a>
+                </button>
+            </article>
         </section>
-        </section>
+    </section>
        
        
         
 
 
     <footer>
-        <p>
+    <p>
         <footer class="footer">
             <div class="footer-container">
         
@@ -87,25 +160,10 @@
                 </div>
         
                 <!-- Redes sociais -->
-                <div class="footer-social">
-                    <h3>Conecte-se</h3>
-        
-                    <div class="social-icons">
-                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-        
-                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-        
-                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="clientes.html" class="contact-link">Entre em Contato</a>
+                
+                    <ul class="footerContato">
+                        <li >
+                            <a href="clientes.html" class="contact-link">-> Entre em Contato <-</a>
                         </li>
                     </ul>
                    
@@ -156,8 +214,57 @@
         }
 
         digitar();
+
+
+
+    
+        const container = document.querySelector(".carrossel-container");
+        const slides = document.querySelectorAll(".carrossel-container .slide");
+        const anterior = document.querySelector(".anterior");
+        const proximo = document.querySelector(".proximo");
+
+        let indiceAtual = 0;
+        let intervalo;
+
+        function mostrarSlide(indice) {
+            if (!container || slides.length === 0) return;
+
+            indiceAtual = (indice + slides.length) % slides.length;
+
+            container.style.transform =
+                    `translateX(-${indiceAtual * 100}%)`;
+            }
+
+            function iniciarCarrossel() {
+                clearInterval(intervalo);
+
+                intervalo = setInterval(() => {
+                    mostrarSlide(indiceAtual + 1);
+                }, 4000);
+            }
+
+            if (container && slides.length > 0) {
+                mostrarSlide(0);
+                iniciarCarrossel();
+            }
+
+            if (proximo) {
+                proximo.addEventListener("click", () => {
+                    mostrarSlide(indiceAtual + 1);
+                    iniciarCarrossel();
+                });
+            }
+
+            if (anterior) {
+                anterior.addEventListener("click", () => {
+                    mostrarSlide(indiceAtual - 1);
+                    iniciarCarrossel();
+                });
+            }
+
     </script>
 
+    
 
     
 </body>
