@@ -1,328 +1,377 @@
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Josefin Sans, serif;
+  font-family: "Josefin Sans", serif;
 }
 
 
-
-
-header a {
-  display: inline-block;
-  text-decoration: none;
-  color: #efb3b3;
-  transition: all 0.3s ease;
-}
-
-header a:hover {
-  color: #ffffff;
-  transform: translateY(-4px);
-}
-
-.tumbHeader {
-    justify-content: center;
-    padding: 0;
-    width: 45%;
-    height: auto;
-    margin-left: 250px;
-    align-items: center;
-}
-
-
-.menu {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 20px;
-  list-style-type: none;
-  width: 100%;
-  margin-top: 20px;
-  text-align: center;
-
-  a:hover {
-    border: 1px solid #d6781f;
-    border-radius: 50px;
-    padding: 3px;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-}
-
-
-
-header {
-  background: linear-gradient(to bottom, #4d2612, #000000);
-  color: #efb3b3;
-  padding: 20px 30px;
-  position: relative;
-
-
-  a {
-    color: #e0abab;
-    text-decoration: none;
-  }
-}
 body {
-  margin: 0;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
   position: relative;
 
   background:
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../acess/background.png");
+    url("../assets/background.png");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
+img {
+  max-width: 100%;
+}
 
+/* ========================================
+   2. CABEÇALHO
+======================================== */
 
+header {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to bottom, #4d2612, #000000);
+  color: #efb3b3;
+  padding: 20px 30px;
+}
 
+header a {
+  display: inline-block;
+  text-decoration: none;
+  color: #efb3b3;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+header .menu-link:hover {
+  color: #ffffff;
+  transform: translateY(-4px);
+}
+
+.logo-link {
+  position: absolute;
+  top: 170px;
+  left: 30px;
+  z-index: 2;
+  line-height: 0;
+  transition: none;
+}
+
+.logo {
+  display: block;
+  width: 10%;
+  min-width: 90px;
+  max-width: 150px;
+  height: auto;
+  border-radius: 25px;
+}
+
+.tumbHeader {
+  position: center;
+  width: min(45%, 700px);
+  height: auto;
+  margin-left: 350px;
+  margin-right: auto;
+  padding: 0;
+  border-radius: 25px;
+}
+
+/* ========================================
+   3. MENU
+======================================== */
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+
+  width: 100%;
+  margin-top: 20px;
+  list-style: none;
+  text-align: center;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.menu a:hover {
+  border-color: #d6781f;
+}
+
+/* ========================================
+   4. TÍTULO DIGITANDO
+======================================== */
 
 .texto-digitando {
-    width: fit-content;
-    display: block;
-    font-size: 30px;
-    font-weight: bold;
-    white-space: normal;
-    display: flex;
-   justify-content: center;
-   margin-left: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: fit-content;
+  max-width: 100%;
+  margin: 20px auto;
+  padding:  80px;
+
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .texto-digitando::after {
-    content: "|";
-    display: inline;
-    color: #542a15;
-    font-weight: normal;
-    font-size: 0.85em;
-    animation: piscar 0.7s step-end infinite;
+  content: "|";
+  display: inline-block;
+  color: #542a15;
+  font-weight: normal;
+  font-size: 0.85em;
+  animation: piscar 0.7s step-end infinite;
 }
 
 @keyframes piscar {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
+
+/* ========================================
+   5. BOTÕES
+======================================== */
 
 button {
   padding: 12px;
   margin: 2%;
-  a {
-    text-decoration: none;
-    color: white
-  }
   background-color: #5a321b;
+  border: none;
   border-radius: 25px;
-  font-size: 30px;
+  font-size: 20px;
+  cursor: pointer;
+
   transition:
+    background-color 0.3s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
+button a {
+  text-decoration: none;
+  color: white;
+}
+
 button:hover {
-  background-color: #6e4726;
-  transform: translateY(-5px);
+  background-color: #308a35;
+  transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
-.backSobre{
-    background-color: #5a321b;
-    width: 700px;
-    margin-left: 300px;
-    border-radius: 25px 25px 0 0;
-    height: 300px;
-    padding: 0  ;
-    margin-bottom: 0;
-    
-    
+/* ========================================
+   6. SOBRE NÓS
+======================================== */
+
+.backSobre {
+  width: min(700px, 90%);
+  min-height: 300px;
+  height: auto;
+
+  margin: 0 auto;
+  padding: 20px;
+
+  background-color: #4B2512;
+  border-radius: 25px 25px 0 0;
 }
 
 .Sobre {
-  margin: 0 20%;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
   background-color: #665347;
-  color: #dedede;
+  color: white;
   padding: 20px;
   border-radius: 10px;
 }
 
 .SobreNos {
-  margin: 0;
-  padding: 15px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 20px 0;
+
   color: white;
   font-size: 30px;
-  
+  text-align: center;
 }
 
 h2 {
-  padding: 70px;
+  padding: 20px;
   margin-bottom: 10px;
   font-size: 30px;
-  height: 5px;
-  font-size: bold;
-  color: white
-  
-}
-.Subtitulo {
-  height: 100px;
-  padding: 0px 70px;
-  margin-top: 0;
+  font-weight: bold;
   color: white;
-  margin-left: 500px;
 }
 
-.cardapio {
-  margin-left: 460px;
-  padding: 20px 30px;
-}
-
-footer {
-  /* FOOTER */
-  .footer {
-    margin-top: 0;
-    
-    background: linear-gradient(to bottom, #4d2612, #000000);
-    color: #ffffff;
-    padding: 45px 8% 20px;
-    font-family: Arial, sans-serif;
-  }
-
-  
-  .footerContato{
-    list-style-type: none;
-  }
-  /* Área principal */
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 35px;
-  }
-
-  /* Identidade */
-  .footer-brand h2 {
-    font-size: 24px;
-    margin: 0 0 12px;
-    letter-spacing: 1px;
-  }
-
-  .footer-brand p {
-    color: #b5bac5;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* Títulos das colunas */
-  .footer h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 0 16px;
-  }
-
-  /* Links de navegação */
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-links li {
-    margin-bottom: 10px;
-  }
-
-  .footer a {
-    color: #b5bac5;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-  }
-
-  .footer a:hover {
-    color: #ffffff;
-  }
-
-  /* Redes sociais */
-  .social-icons {
-    display: flex;
-    gap: 18px;
-    margin-bottom: 18px;
-  }
-
-  .social-icons a {
-    color: #ffffff;
-    font-size: 22px;
-    transition:
-      color 0.3s ease,
-      transform 0.3s ease;
-  }
-
-  .social-icons a:hover {
-    color: #8b9cff;
-    transform: translateY(-3px);
-  }
-
-  /* Link de contato */
-  .footer .contact-link {
-    list-style-type: none;
-    font-size: 13px;
-  }
-
-  /* Barra inferior */
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid #393c45;
-  }
-
-  .footer-bottom p {
-    color: #9da3af;
-    font-size: 12px;
-    margin: 0;
-    line-height: 1.6;
-  }
-
-  /* Responsividade para celulares */
-  @media (max-width: 650px) {
-    .footer {
-      padding: 35px 6% 20px;
-    }
-
-    .footer-container {
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-}
-
-.logo {
-  width: 10%;
+.Subtitulo {
   height: auto;
-  align-self: flex-start;
-  border-radius: 25px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
 }
 
+.btn-cardapio {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 12px 30px;
 
+  background-color: #5a321b;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+}
+/* ========================================
+   7. RODAPÉ
+======================================== */
 
-/* CARROSSEL */
+.footer {
+  width: 100%;
+  margin-top: 0;
+  padding: 45px 8% 20px;
+
+  background: linear-gradient(to bottom, #4d2612, #000000);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.footerContato {
+  list-style: none;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 35px;
+}
+
+.footer-brand h2 {
+  font-size: 24px;
+  margin: 0 0 12px;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+.footer-brand p {
+  color: #b5bac5;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #b5bac5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 22px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #c87941;
+  transform: translateY(-3px);
+}
+
+.footer .contact-link {
+  list-style: none;
+  font-size: 13px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  border-top: 1px solid #393c45;
+}
+
+.footer-bottom p {
+  color: #9da3af;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ========================================
+   8. CARROSSEL
+======================================== */
+
 .carrossel {
   position: relative;
   width: 100%;
@@ -340,50 +389,18 @@ footer {
   transition: transform 0.7s ease-in-out;
 }
 
-/* SLIDES */
-/* .slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-
-  opacity: 1;
-  visibility: visible;
-
-  transform: translateX(100%);
-  transition: transform 0.7s ease-in-out;
-  z-index: 0; */
-
-
-
-/* Slide anterior sai pela esquerda */
-/* .slide.saindo-esquerda {
-  transform: translateX(-100%);
-  z-index: 1;
-}
-
-/* Próximo slide entra pela direita */
-/* .slide.entrando-direita {
-  transform: translateX(-100%);
-  z-index: 1;
-} */
-
 .carrossel .slide {
   position: relative;
   flex: 0 0 100%;
   min-width: 0;
   height: 100%;
-
 }
 
-
-/* FIGURE E IMAGENS */
 .carrossel .slide figure {
   position: relative;
   width: 100%;
   height: 100%;
   margin: 0;
-  
 }
 
 .carrossel .slide img {
@@ -391,51 +408,51 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
 }
 
-/* CONTEÚDO SOBRE A IMAGEM */
 .conteudo-slide {
   position: absolute;
   inset: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   padding: 25px;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.05));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05));
 }
 
-/* TÍTULO */
 .conteudo-slide h2 {
   margin: 0 0 12px;
+  padding: 0;
   font-size: 32px;
   font-weight: 700;
 }
 
-/* DESCRIÇÃO */
 .conteudo-slide p {
+  max-width: 650px;
   margin: 0 0 24px;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* BOTÃO DE CADA SLIDE */
 .btn-slide {
   display: inline-block;
   padding: 12px 28px;
+
   background-color: #c87941;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
+
   border: 2px solid #c87941;
   border-radius: 6px;
+
   transition:
     background-color 0.3s ease,
     color 0.3s ease,
@@ -448,8 +465,13 @@ footer {
   transform: translateY(-3px);
 }
 
-/* SETAS DE NAVEGAÇÃO */
-.carrossel>button {
+
+
+/* ========================================
+   9. SETAS DO CARROSSEL
+======================================== */
+
+.carrossel > button {
   position: absolute;
   top: 50%;
   z-index: 2;
@@ -462,9 +484,10 @@ footer {
   width: 42px;
   height: 42px;
   padding: 0;
+  margin: 0;
 
   background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
 
@@ -474,8 +497,13 @@ footer {
   transition: background-color 0.3s ease;
 }
 
-.carrossel>button:hover {
+.carrossel > button:hover {
   background-color: #c87941;
+}
+
+.carrossel > button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }
 
 .anterior {
@@ -486,9 +514,156 @@ footer {
   right: 15px;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 600px) {
+/* ========================================
+   10. TABLETS
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 20px;
+  }
+
+  .logo-link {
+    top: auto;
+    left: 20px;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin-bottom: 15px;
+  }
+
+  .logo {
+    width: 110px;
+    min-width: 0;
+    
+  }
+
+  .tumbHeader {
+    width: 75%;
+    margin: 0 auto;
+    margin-left: 100px;
+  }
+
+  .menu {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .texto-digitando {
+    margin: 25px auto;
+    font-size: 28px;
+  }
+
+  .cardapio {
+    padding: 20px;
+  }
+
   .carrossel {
+    width: 94%;
+    height: 380px;
+  }
+
+  .footer {
+    padding: 40px 5% 20px;
+    
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+/* ========================================
+   11. CELULARES
+======================================== */
+
+@media screen and (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .logo-link {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto 15px;
+  }
+
+  .logo {
+    width: 100px;
+    max-width: 100%;
+  }
+
+  .tumbHeader {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+
+  .menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+  .texto-digitando {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 12px;
+    font-size: clamp(20px, 5vw, 26px);
+    text-align: center;
+  }
+
+  .SobreNos {
+    font-size: 24px;
+    padding: 15px 10px;
+  }
+
+  .backSobre {
+    width: 92%;
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .Sobre {
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    padding: 15px;
+    font-size: 24px;
+    height: auto;
+  }
+
+  .Subtitulo {
+    height: auto;
+    padding: 10px 15px;
+    margin: 0 auto;
+  }
+
+  .cardapio {
+    width: 100%;
+    padding: 15px;
+  }
+
+  button {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .carrossel {
+    width: 94%;
     height: 320px;
     margin: 25px auto;
     border-radius: 8px;
@@ -499,11 +674,13 @@ footer {
   }
 
   .conteudo-slide h2 {
+    padding: 0;
     font-size: 24px;
   }
 
   .conteudo-slide p {
     font-size: 14px;
+    line-height: 1.5;
     margin-bottom: 18px;
   }
 
@@ -512,7 +689,7 @@ footer {
     font-size: 14px;
   }
 
-  .carrossel>button {
+  .carrossel > button {
     width: 34px;
     height: 34px;
     font-size: 16px;
@@ -525,5 +702,116 @@ footer {
   .proximo {
     right: 8px;
   }
+
+  .footer {
+    padding: 35px 6% 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
+/* ========================================
+   12. CELULARES PEQUENOS
+======================================== */
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 12px;
+  }
+
+  .logo {
+    width: 85px;
+  }
+
+  .menu {
+    gap: 8px;
+  }
+
+  .menu a {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .texto-digitando {
+    font-size: 20px;
+  }
+
+  .SobreNos {
+    font-size: 21px;
+  }
+
+  .Sobre {
+    padding: 12px;
+  }
+
+  .backSobre {
+    width: 94%;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  .cardapio {
+    padding: 10px;
+  }
+
+  .carrossel {
+    height: 280px;
+    margin: 20px auto;
+  }
+
+  .conteudo-slide {
+    padding: 15px 38px;
+  }
+
+  .conteudo-slide h2 {
+    font-size: 20px;
+  }
+
+  .conteudo-slide p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .btn-slide {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .carrossel > button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .anterior {
+    left: 5px;
+  }
+
+  .proximo {
+    right: 5px;
+  }
+
+  .footer {
+    padding: 30px 5% 15px;
+  }
+
+  .footer-container {
+    gap: 25px;
+  }
+
+  .social-icons {
+    gap: 14px;
+  }
+}
