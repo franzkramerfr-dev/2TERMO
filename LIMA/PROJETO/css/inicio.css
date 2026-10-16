@@ -34,7 +34,8 @@ img {
 header {
   position: relative;
   width: 100%;
-  background: linear-gradient(to bottom, #4d2612, #000000);
+  background: url("/assets/Logo Smartcoffee em Marrom e Creme.png");
+    
   color: #efb3b3;
   padding: 20px 30px;
 }
