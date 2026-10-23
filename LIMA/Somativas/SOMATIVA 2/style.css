@@ -1,211 +1,473 @@
-
-body{
-
-    background: 
-        radial-gradient(
-            circle at 75% 25%, 
-            rgba(105, 74, 255, 0.28),
-            transparent 25%
-        ),
-        linear-gradient(75deg, rgb(41, 4, 41));
-        
-   font-family: "Roboto", sans-serif;
-    margin: 0;
-    h4{
-        color: #22BBDD
-
-    }
-    h1{
-        width: 450px;
-        color: antiquewhite;
-        font-size: 60px;
-    }
-    p{
-        height: 30px 30px;
-        width: 380px;
-        color: white
-    };
-    h2{
-        color: antiquewhite;
-        width: 900px;
-        font-size: 50px;
-
-    }
+* {
+    box-sizing: border-box;
 }
 
-header{
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+
+    background:
+        radial-gradient(circle at 75% 25%,
+            rgba(105, 74, 255, 0.28),
+            transparent 25%),
+        linear-gradient(75deg, rgb(41, 4, 41), #100820);
+
+    color: white;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    max-width: 100%;
+    color: antiquewhite;
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    line-height: 1.1;
+}
+
+h2 {
+    max-width: 100%;
+    color: antiquewhite;
+    font-size: clamp(1.8rem, 4vw, 3.125rem);
+}
+
+h4 {
+    color: #22BBDD;
+}
+
+p {
+    max-width: 100%;
+    color: white;
+    line-height: 1.7;
+}
+
+
+
+header {
     background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    padding: 15px 20px;
-    height: 30px 30px;
-
-    h2{
-        width: 650px;
-    }
-    
-    
-    .title{
-        display: flex;
-        align-items: left;
-       
-
-        
-        .nostalgia{
-        color: white;
-        }
-
-        .play{
-        margin-left: -350px;
-        color: deeppink;
-        }
-    };
-  
-
-    .menu a:hover{
-        border-color: #d6781f;
-
-    }
-    .menu{
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 20px;
-        justify-content: flex-end;
-        list-style: none;
-        a{
-            text-decoration: none;
-            list-style-type: none;
-            color: white;
-            
-        }
-        .link-sobre{
-            border-color: purple;
-            border-radius: 25px;
-            
-
-        }
-        
-
-    }
-
+    gap: 24px;
+    padding: 18px 5%;
+    min-height: 80px;
 
 }
 
-.inicio{
-    padding: 30px;
+header .title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+header .title .nostalgia {
+    color: white;
+}
+
+header .title .play {
+    color: deeppink;
+    margin-left: 0;
+}
+
+header h2 {
+    width: auto;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header .menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header .menu a:hover {
+    color: #d6781f;
+}
+
+header .menu .link-sobre {
+    border: 1px solid purple;
+    border-radius: 25px;
+    padding: 8px 14px;
+}
+
+
+.inicio {
+    padding: 60px 5%;
+    display: grid;
     
+    align-items: center;
+    gap: 40px;
+}
+
+.inicio .conteudo {
+    min-width: 0;
+}
+
+.inicio h1 {
+    margin-top: 0;
+    width: 600PX;
+}
+
+.inicio p {
+    max-width: 450px;
+}
+
+.inicio .bannerTema {
+    width: 100%;
+    max-width: 500px;
+    margin-top: -500px;
+    border-radius: 25px;
+    object-fit: cover;
+    margin-left: 900px;
+
+}
+
+.inicio button {
+    margin-top: 24px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    padding: 12px 24px;
+    background-color: rgb(252, 45, 93);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.inicio button:hover {
+    background-color: #e51b70;
+    transform: translateY(-4px);
+}
+
+.inicio button a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.classicos,
+.herois,
+.hoje {
+    padding: 50px 5%;
+}
+
+.classicos h2,
+.herois h2,
+.hoje h2 {
+    margin-top: 0;
+}
+
+.herois .container {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 35px;
+}
+
+.herois .container h2,
+.herois .container p {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+}
+
+.herois .container p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+.classicos .cards ul{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 50px;
+    list-style: none;
+    margin-left: 350px;
+    
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.herois .cards ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 50px;
+    list-style: none;
+    margin-left: 60px;
+    
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.classicos .cards li,
+.herois .cards li {
+    min-width: 0;
+    background-color: #0d0f42;
+    border-radius: 25px;
+    padding: 20px;
+    color: aliceblue;
+}
+
+.classicos .cards img,
+.herois .cards img {
+    width: 100%;
    
-
-    .bannerTema{
-        display: flex;
-        gap: 24px;
-        margin-left: 1100px;
-        width: 500px;
-        border-radius: 25px;
-        margin-top: -480px
-    };
-
-    button{
-        margin-top: 200px;
-        font-size: 20px;
-        border-radius: 25px;
-        padding: 10px;
-        background-color: rgb(252, 45, 93);
-        color: white;
-        border: none;
-        transition:
-            color 0.3s ease,
-            border-color 0.3s ease,
-            transform 0.3s ease;
-    }
-
-    button a:hover{
-        border-color: blue;
-        transform: translateY(-4px);
-    }
-    
-    
+    object-fit: cover;
+    border-radius: 18px;
 }
 
-.classicos{
-    padding: 30px;
-    
-   
-    .cards ul{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        gap:24px;
-        
-        li{
-            display: grid;
-            background-color: #0d0f42;
-            border-radius: 25px;
-            padding: 20px;
-            width: 250px;
-            color: aliceblue;
-        }
 
-        img{
-       
-            width: 250px;
-            align-items: center;
-            border-radius: 25px;
-            position: center;
-        }
-      
 
-     
-    }
+.hoje .tituloHoje{
+    width: 600px;
+}
+.hoje {
+    min-width: 0;
 }
 
-.herois{
-    .container{
-        text-align: center;
+.footer {
+    padding: 30px 5%;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    header {
+        flex-wrap: wrap;
         justify-content: center;
-        h2{
-            margin-left: 500px;
-        }
-        p{
-            margin-left: 750px;
-        }
+        text-align: center;
     }
+
+    header .menu {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .inicio {
+        gap: 28px;
+    }
+
+    .classicos .cards ul,
+    .herois .cards ul,
+    .hoje  ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    header .menu {
+        width: 100%;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .inicio {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .inicio .bannerTema {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .classicos,
+    .herois,
+    .hoje {
+        padding: 35px 20px;
+    }
+
+    .classicos .cards ul,
+    .herois .cards ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .classicos .cards li,
+    .herois .cards li {
+        padding: 14px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 16px 12px;
+    }
+
+    header .menu {
+        gap: 12px;
+    }
+
+    header .menu a {
+        font-size: 0.9rem;
+    }
+
+    .inicio {
+        padding: 30px 16px;
+    }
+
+    .inicio h1 {
+        font-size: 2.3rem;
+    }
+
+    .inicio p {
+        font-size: 0.95rem;
+    }
+
+    .inicio button {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .classicos,
+    .herois,
+    .hoje {
+        padding: 30px 16px;
+    }
+
+    
+}
+
+
+.hoje ul {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 8%;
+    align-items: center;
+    margin-left: 250px;
+    justify-content: space-between;
+   
+}
+
+.hoje li{
+    
+    border-radius: 25px;
+    width: 500px;
+    padding: 20px;
+    list-style-type: none;
+    
+    
+}
+
+.hoje img {
+    border-radius: 25px;
+}
+
+.hoje .liFundoAzul {
+    background-color: #2194ad;
+    color: black;
+   
+}
+
+.hoje .liFundoAmarelo {
+    background-color: rgb(204, 204, 17);
+    color: black;
+}
+.hoje .numero {
+    color: #e51b70;
+}
+
+.sobre {
+   
     padding: 30px;
-  
+    height: 450px;
+    text-align: center;
     
-        .cards ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 24px;
+    background:
     
-            li {
-                display: grid;
-                background-color: #0d0f42;
-                border-radius: 25px;
-                padding: 20px;
-                width: 250px;
-                color: aliceblue;
-            }
+     linear-gradient(90deg, #6336f3 0%, #f12d7e 100%);
+        
+}
+
+.sobre article {
+    margin-top: 100px;
+}
+
+.sobre h4 {
+    color: rgb(204, 204, 17);
+}
+
+.nostalgia{
+    color: white;
     
-            img {
-    
-                width: 250px;
-                align-items: center;
-                border-radius: 25px;
-                position: center;
-            }
-        }
+}
+
+.play{
+    color: #e51b70;
+    margin-left: -550px;
+   
 
 }
 
-.hoje{
+footer{
+    
     padding: 30px;
-
+    display: flex;
+    justify-content: space-between;
+    background-color: #100820;
 }
 
-.footer{
+footer p {
+    text-align: center;
     
 }
+
+footer a {
+    text-decoration: none;
+    color: #22BBDD;
+   
+    
+}
+
+footer nav {
+    display: flex;
+}
+
+footer nav ul li {
+    height: 30px;
+    text-decoration: none;
+    list-style-type: none;
+    
+
+}
+

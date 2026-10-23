@@ -133,27 +133,46 @@ WHERE nome = 'Excluir Depois';
 -- 17. Tente inserir um produto com id_categoria = 9999.
 -- Qual restrição impediu a operação?
 
-INSERT INTO produto(id_categoria) VALUES
-('999');
+select * from produto
+
+-- INSERT INTO produto(id_categoria,nome,preco,ativo) VALUES
+-- ('9999', 'café', '9.99', '1');
+-- O programa exibe uma mensagem de valor inválido pois a chave estrangeira entra em conflito com a chave primária da tabela ao inserir um valor inexistente.
 
 -- 18. Tente cadastrar um cliente usando 'ana@email.com'.
 -- Qual restrição impediu a operação?
 
-INSERT INTO cliente(email) VALUES
-('ana@email.com');
+select * from cliente
+
+INSERT INTO cliente(id_cliente,nome,email,telefone,cidade,ativo) VALUES
+('26', 'ana','ana@email.com', '393479432', 'Limeira', '1');
+
+-- O programa apresenta uma mensagem de erro pois estou tentando cadastrar o mesmo email duas vezes, sendo que colocamos como padrão tipo UNIQUE, impedindo de ser duplicado.
 
 -- 19. Tente criar um pedido com id_cliente = 9999.
 -- Qual restrição impediu a operação?
 
-CREATE
+INSERT INTO PEDIDO(id_pedido, data_pedido, status_pedido, valor_total, id_cliente) VALUES
+('400', '2026-10-02 08:22:54', 'ABERTO', '99.34', '9999')
+
+-- Novamente o programa mostra o mesmo erro que apareceu na questão 17 por que a chave estrangeira entra em conflito com um id com valor inexistennte.
+
+SELECT * FROM pedido
 
 -- 20. Escreva em comentários a diferença entre os três erros anteriores.
+
+-- A diferença entre ambos é o tipo que cada atributo possui. Por exemplo: UNIQUE que impede que o mesmo dado seja acrescentado duas vezes enquanto as chaves estrangeiras necessitam de um valor existente na tabela.
 
 -- PARTE E - DESAFIO COMPLETO COM TRANSAÇÃO
 
 -- 21. Inicie uma transação.
 
+START TRANSACTION
+
 -- 22. Dentro dela, cadastre um cliente, um pedido e dois itens relacionados.
+
+START TRANSACTION
+
 
 -- 23. Faça uma consulta com JOIN comprovando que os registros existem
 --     enquanto a transação está aberta.
