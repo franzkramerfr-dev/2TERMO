@@ -1,28 +1,320 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funcionários - SmartCoffee</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/funcionarios.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitcount+Ink:wght@100..900&family=Bungee&family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Josefin+Sans:wght@100..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="../assets/Logo Minimalista de Café com Vapor.png" type="image/x-icon">
+
+    <title>SmartCoffee - Funcionários</title>
 </head>
 
 <body>
+
+    <!-- CABEÇALHO -->
     <header>
-        <figure>
-            <img src="" alt="Logo SmartCoffee" />
-        </figure>
-        <h1>SmartCoffee</h1>
-        <nav>
-            <ul>
-                <li><a href="/inicio.html">Início</a></li>
-                <li><a href="/clientes.html">Clientes</a></li>
-                <li><a href="/produtos.html">Produtos</a></li>
-                <li><a href="/funcionarios.html">Funcionários</a></li>
-                <li><a href="/pagamentos.html">Pagamentos</a></li>
-                <li><a href="/estoque.html">Estoque</a></li>
-                <li><a href="/delivery.html">Delivery</a></li>
-                <li><a href="/programafid.html">Programa Fidelidade</a></li>
-            </ul>
-        </nav>
+
+        <section class="social">
+            <h3>Bem-vindo</h3>
+
+            <article class="social-icons">
+                <a href="https://github.com/franzkramerfr-dev" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+            </article>
+        </section>
+
+        <section>
+
+            <img class="tumbHeader"
+                src="../assets/Logo Smartcoffee em Marrom e Creme.png"
+                alt="SmartCoffee">
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="funcionarios.html">Funcionários</a></li>
+                    <li><a href="pagamentos.html">Pagamentos</a></li>
+                    <li><a href="estoque.html">Estoque</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="programafid.html">Programa Fidelidade</a></li>
+                </ul>
+            </nav>
+
+        </section>
+
     </header>
+
+    <!-- CONTEÚDO -->
+    <main>
+
+        <section class="funcionarios">
+
+            <h1>FUNCIONÁRIOS</h1>
+
+            <!-- Indicadores -->
+
+            <article class="indicadores">
+
+                <section class="card">
+                    <h2 id="totalFuncionarios">0</h2>
+                    <p>Total</p>
+                </section>
+
+                <section class="card">
+                    <h2 id="totalCozinheiro">0</h2>
+                    <p>Cozinheiros</p>
+                </section>
+
+                <section class="card">
+                    <h2 id="totalAtendentes">0</h2>
+                    <p>Atendentes</p>
+                </section>
+
+                <section class="card">
+                    <h2 id="totalGerentes">0</h2>
+                    <p>Gerentes</p>
+                </section>
+
+            </article>
+
+            <!-- Cadastro -->
+
+            <article class="cadastro">
+
+                <h2>Cadastrar Funcionário</h2>
+
+                <form id="formFuncionario">
+
+                    <input type="text" id="nome" placeholder="Nome completo" required>
+
+                    <select id="cargo" required>
+                        <option value="">Selecione o cargo</option>
+                        <option>Cozinheiro</option>
+                        <option>Atendente</option>
+                        <option>Gerente</option>
+                        <option>Caixa</option>
+                    </select>
+
+                    <input type="tel" id="telefone" placeholder="Telefone">
+
+                    <input type="email" id="email" placeholder="E-mail">
+
+                    <input type="date" id="admissao">
+
+                    <button type="submit">Cadastrar</button>
+
+                </form>
+
+            </article>
+
+            <!-- Pesquisa -->
+
+            <article class="pesquisa">
+
+                <input type="text" id="buscar" placeholder="Pesquisar funcionário...">
+
+            </article>
+
+            <!-- Lista -->
+
+            <article class="lista">
+
+                <h2>Equipe</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Admissão</th>
+                            <th>Ações</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="listaFuncionarios"></tbody>
+
+                </table>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer">
+
+        <section class="footer-container">
+
+            <section class="footer-brand">
+                <h2>SMARTCOFFEE</h2>
+                <p>A cafeteria inteligente que conecta você com o futuro.</p>
+            </section>
+
+            <section class="footer-links">
+
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="funcionarios.html">Funcionários</a></li>
+                    <li><a href="pagamentos.html">Pagamentos</a></li>
+                    <li><a href="estoque.html">Estoque</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="programafid.html">Programa Fidelidade</a></li>
+                </ul>
+
+            </section>
+
+            <section>
+                <ul class="footerContato">
+                    <li>
+                        <a href="clientes.html" class="contact-link">
+                            Entre em Contato →
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </section>
+
+        <section class="footer-bottom">
+            <p>&copy; 2026 SmartCoffee. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Franz Kramer.</p>
+        </section>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let funcionarios = JSON.parse(localStorage.getItem("funcionarios")) || [];
+        let editando = -1;
+
+        const form = document.getElementById("formFuncionario");
+        const lista = document.getElementById("listaFuncionarios");
+        const buscar = document.getElementById("buscar");
+
+        function salvar() {
+            localStorage.setItem("funcionarios", JSON.stringify(funcionarios));
+        }
+
+        function atualizarIndicadores() {
+
+            document.getElementById("totalFuncionarios").textContent = funcionarios.length;
+
+            document.getElementById("totalCozinheiros").textContent =
+                funcionarios.filter(f => f.cargo === "Cozinheiro").length;
+
+            document.getElementById("totalAtendentes").textContent =
+                funcionarios.filter(f => f.cargo === "Atendente").length;
+
+            document.getElementById("totalGerentes").textContent =
+                funcionarios.filter(f => f.cargo === "Gerente").length;
+        }
+
+        function renderizar(filtro = "") {
+
+            lista.innerHTML = "";
+
+            funcionarios
+                .filter(f => f.nome.toLowerCase().includes(filtro.toLowerCase()))
+                .forEach((funcionario, indice) => {
+
+                    lista.innerHTML += `
+                    <tr>
+                        <td>${funcionario.nome}</td>
+                        <td>${funcionario.cargo}</td>
+                        <td>${funcionario.telefone}</td>
+                        <td>${funcionario.email}</td>
+                        <td>${funcionario.admissao}</td>
+                        <td>
+                            <button onclick="editar(${indice})">Editar</button>
+                            <button onclick="excluir(${indice})">Excluir</button>
+                        </td>
+                    </tr>
+                `;
+                });
+
+            atualizarIndicadores();
+        }
+
+        form.addEventListener("submit", e => {
+
+            e.preventDefault();
+
+            const funcionario = {
+                nome: nome.value,
+                cargo: cargo.value,
+                telefone: telefone.value,
+                email: email.value,
+                admissao: admissao.value
+            };
+
+            if (editando === -1) {
+                funcionarios.push(funcionario);
+            } else {
+                funcionarios[editando] = funcionario;
+                editando = -1;
+            }
+
+            salvar();
+            renderizar();
+            form.reset();
+        });
+
+        function editar(indice) {
+
+            const f = funcionarios[indice];
+
+            nome.value = f.nome;
+            cargo.value = f.cargo;
+            telefone.value = f.telefone;
+            email.value = f.email;
+            admissao.value = f.admissao;
+
+            editando = indice;
+        }
+
+        function excluir(indice) {
+
+            if (confirm("Deseja excluir este funcionário?")) {
+
+                funcionarios.splice(indice, 1);
+
+                salvar();
+                renderizar();
+            }
+        }
+
+        buscar.addEventListener("input", () => {
+            renderizar(buscar.value);
+        });
+
+        renderizar();
+
+    </script>
+
+</body>
+
+</html>
