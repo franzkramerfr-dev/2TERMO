@@ -3,102 +3,539 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cardápio - SmartCoffee</title>
+
+    <link rel="stylesheet" href="/css/produtos.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitcount+Ink:wght@100..900&family=Bungee&family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="assets/Logo Minimalista de Café com Vapor.png"
+      type="image/x-icon"
+    />
+
+    <title>SmartCoffee - Cafeteria Inteligente</title>
   </head>
+
   <body>
+   
     <header>
-      <figure>
-        <img src="" alt="Logo SmartCoffee" />
-      </figure>
-      <h1>SmartCoffee</h1>
-      <nav>
-        <ul>
-          <li><a href="/inicio.html">Início</a></li>
-          <li><a href="/clientes.html">Clientes</a></li>
-          <li><a href="/produtos.html">Produtos</a></li>
-          <li><a href="/funcionarios.html">Funcionários</a></li>
-          <li><a href="/pagamentos.html">Pagamentos</a></li>
-          <li><a href="/estoque.html">Estoque</a></li>
-          <li><a href="/delivery.html">Delivery</a></li>
-          <li><a href="/programafid.html">Programa Fidelidade</a></li>
-        </ul>
-      </nav>
+      <section class="social">
+        <h3>Bem-vindo</h3>
+
+        <article class="social-icons">
+          <a
+            href="https://github.com/franzkramerfr-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            LinkedIn
+          </a>
+        </article>
+      </section>
+
+      <section>
+        <img
+          class="tumbHeader"
+          src="../assets/Logo Smartcoffee em Marrom e Creme.png"
+          alt="Logo SmartCoffee"
+        />
+
+        <nav>
+          <ul class="menu">
+            <li><a href="inicio.html" class="menu-link">Início</a></li>
+            <li><a href="clientes.html" class="menu-link">Clientes</a></li>
+            <li><a href="produtos.html" class="menu-link">Produtos</a></li>
+            <li>
+              <a href="funcionarios.html" class="menu-link">Funcionários</a>
+            </li>
+            <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>
+            <li><a href="estoque.html" class="menu-link">Estoque</a></li>
+            <li><a href="delivery.html" class="menu-link">Delivery</a></li>
+            <li>
+              <a href="programafid.html" class="menu-link"
+                >Programa Fidelidade</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </section>
     </header>
+
+  
     <main>
-      <section id="produtos">
-        <h2>PRODUTOS</h2>
-        <h3>CAFÉS</h3>
-        <img src="" alt="Café Espresso" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          molestiae quibusdam, eveniet, maxime assumenda nostrum fuga unde in
-          aliquid non et ex earum qui, quis quos amet tenetur ut ducimus.
-        </p>
+      <section class="produtos" id="produtos">
+        <h1>PRODUTOS</h1>
 
-        <img src="" alt="Café Americano" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
-          necessitatibus rem veritatis saepe libero hic asperiores. Voluptas
-          soluta nemo non autem necessitatibus cum quasi veritatis deleniti.
-          Eveniet, sit minima. Eum.
-        </p>
+        <section class="categoria">
+          <h2>CAFÉS</h2>
 
-        <img src="" alt="Cappucino" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-          aspernatur, magnam, earum iste iure deleniti quaerat fugiat eaque
-          labore modi illum sint asperiores? Magni quibusdam sequi doloribus
-          laboriosam, eligendi cum?
-        </p>
-        <hr />
-        <h3>SALGADOS</h3>
-        <img src="" alt="Coxinha de Frango" />
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-          amet, aspernatur perspiciatis perferendis aliquid vero accusantium,
-          quo ullam deleniti necessitatibus possimus alias soluta quisquam iure
-          sapiente inventore veniam. Dignissimos, blanditiis?
-        </p>
+          <ul class="lista-produtos">
+            <li class="produto-item">
+              <figure>
+                <img src="" alt="Café preto" />
+              </figure>
 
-        <img src="" alt="Frios" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aperiam
-          architecto dolorem ullam quis, exercitationem fuga nam nulla quod
-          fugit totam id laudantium quae nisi autem ad inventore voluptatem
-          deleniti?
-        </p>
+              <h3>CAFÉ PRETO</h3>
+              <p></p>
 
-        <img src="" alt="Presunto e Queijo" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere non
-          suscipit rerum beatae architecto dolorem fugit nisi odit dolore eum
-          atque, nam soluta placeat, numquam expedita molestiae? Ratione, alias
-          quidem.
-        </p>
-        <hr />
-        <h3>SOBREMESAS</h3>
-        <img src="" alt="Brigadeiro" />
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ex,
-          perferendis aut illo sint asperiores officiis minima libero laborum
-          impedit, similique voluptatibus, porro nam autem quo. Nobis beatae in
-          ratione?
-        </p>
-        <img src="" alt="Pudim" />
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est sapiente
-          ea excepturi? Voluptatem similique quaerat porro nesciunt quae atque
-          accusamus doloremque corrupti modi! Beatae sapiente sit labore quam,
-          tenetur fugiat!
-        </p>
-        <img src="" alt="Milk-Shake" />
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-          veniam velit eum ipsam voluptatibus eius dolor, autem libero fugiat
-          provident nisi sed reiciendis soluta veritatis error! Culpa laudantium
-          ipsam officiis?
-        </p>
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir café preto"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar café preto"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure>
+             
+                <img src="" alt="Café americano" />
+              </figure>
+
+              <h3>CAFÉ AMERICANO</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir café americano"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar café americano"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure>
+                
+                <img src="" alt="Capuccino" />
+              </figure>
+
+              <h3>CAPUCCINO</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir capuccino"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar capuccino"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+          </ul>
+        </section>
+
+   
+        <section class="categoria">
+          <h2>SALGADOS</h2>
+
+          <ul class="lista-produtos">
+            <li class="produto-item">
+              <figure><img src="" alt="Frios" /></figure>
+              <h3>FRIOS</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir frios"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar frios"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure><img src="" alt="Coxinha de frango" /></figure>
+              <h3>COXINHA DE FRANGO</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir coxinha"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar coxinha"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure><img src="" alt="Pastel" /></figure>
+              <h3>PASTEL</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir pastel"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar pastel"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+          </ul>
+        </section>
+
+     
+        <section class="categoria">
+          <h2>SOBREMESAS</h2>
+
+          <ul class="lista-produtos">
+            <li class="produto-item">
+              <figure><img src="" alt="Brigadeiro" /></figure>
+              <h3>BRIGADEIRO</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir brigadeiro"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar brigadeiro"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure><img src="" alt="Milk-shake" /></figure>
+              <h3>MILK-SHAKE</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir milk-shake"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar milk-shake"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure><img src="" alt="Bolos" /></figure>
+              <h3>BOLOS</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir bolos"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar bolos"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+          </ul>
+        </section>
+
+        <section class="categoria">
+          <h2>BEBIDAS GELADAS</h2>
+
+          <ul class="lista-produtos">
+            <li class="produto-item">
+              <figure><img src="" alt="Suco de laranja" /></figure>
+              <h3>SUCO DE LARANJA</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir suco de laranja"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar suco de laranja"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure><img src="" alt="Suco de uva" /></figure>
+              <h3>SUCO DE UVA</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir suco de uva"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar suco de uva"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+
+            <li class="produto-item">
+              <figure><img src="" alt="Suco de maracujá" /></figure>
+              <h3>SUCO DE MARACUJÁ</h3>
+              <p></p>
+
+              <section class="contador">
+                <button
+                  class="diminuir"
+                  type="button"
+                  aria-label="Diminuir suco de maracujá"
+                >
+                  −
+                </button>
+                <span class="quantidade">0</span>
+                <button
+                  class="aumentar"
+                  type="button"
+                  aria-label="Aumentar suco de maracujá"
+                >
+                  +
+                </button>
+              </section>
+
+              <button class="adicionar-carrinho" type="button">
+                Adicionar ao Carrinho
+              </button>
+            </li>
+          </ul>
+        </section>
       </section>
     </main>
+
+   
+    <footer class="footer">
+      <section class="footer-container">
+        <section class="footer-brand">
+          <h2>SMARTCOFFEE</h2>
+          <p>A cafeteria inteligente que conecta você com o futuro.</p>
+        </section>
+
+        <nav class="footer-links">
+          <h3>Navegação</h3>
+
+          <ul>
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="funcionarios.html">Funcionários</a></li>
+            <li><a href="pagamentos.html">Pagamentos</a></li>
+            <li><a href="estoque.html">Estoque</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="programafid.html">Programa Fidelidade</a></li>
+          </ul>
+        </nav>
+
+        <ul class="footerContato">
+          <li>
+            <a href="clientes.html" class="contact-link">
+              Entre em Contato →
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="footer-bottom">
+        <p>&copy; 2026 SmartCoffee. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Franz Kramer.</p>
+      </section>
+    </footer>
+
+   
+    <script>
+      const produtos = document.querySelectorAll(".produto-item");
+
+      produtos.forEach((produto) => {
+        const diminuir = produto.querySelector(".diminuir");
+        const aumentar = produto.querySelector(".aumentar");
+        const quantidade = produto.querySelector(".quantidade");
+        const botaoCarrinho = produto.querySelector(".adicionar-carrinho");
+        const nome = produto.querySelector("h3");
+
+        let total = 0;
+
+        aumentar.addEventListener("click", () => {
+          total++;
+          quantidade.textContent = total;
+        });
+
+        diminuir.addEventListener("click", () => {
+          if (total > 0) {
+            total--;
+            quantidade.textContent = total;
+          }
+        });
+
+        botaoCarrinho.addEventListener("click", () => {
+          if (total > 0) {
+            console.log("Produto:", nome.textContent, "| Quantidade:", total);
+
+            alert(
+              total + " unidade(s) de " + nome.textContent + " selecionada(s) no carrinho!",
+            );
+
+            total = 0;
+            quantidade.textContent = 0;
+          } else {
+            alert("Selecione uma quantidade antes de adicionar ao carrinho.");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
