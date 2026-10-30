@@ -257,35 +257,6 @@ ROLLBACK;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 SELECT @categoria = LAST_INSERT_ID();
 SELECT @categoria;
 
