@@ -1,0 +1,118 @@
+:root{
+    --corHeaderFooter: #263449;
+    --corInicio: #ADD8E6;
+    --corAtracoes: #dedede;
+}
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: var(--corAtracoes)
+}
+header {
+    display: flex;
+    background-color: #263449;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+.menu-navegacao a {
+    font-size: 22px;
+    font-size: bold;
+    color: #ffffff;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.escopo {
+
+    background-color: #ADD8E6;
+    text-align: center;
+    height: 450px;
+
+}
+
+.escopo img {
+    width: 400px;
+}
+
+.escopo article {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.escopo article .btn {
+    padding: 12px;
+    margin-top: -500px;
+    border-radius: 15px;
+    background-color: var(--corHeaderFooter);
+    color: #ffffff;
+
+}
+
+.cards .cards-palestra li{
+    background-color: white;
+    list-style-type: none;
+    padding: 0px 10px 10px 10px;
+    text-align: center;
+    img{
+        width: 300px;
+    }
+}
+
+.cards-palestra {
+    display: grid;
+    
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.programacao {
+    background-color: #ffffff;
+    text-align: center;
+
+}
+
+.programacao li {
+    list-style-type: none;
+}
+
+
+
+.programacaoSobre{
+    display:  grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+
+    
+}
+.sobre {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--corHeaderFooter);
+    justify-content: center;
+    display: flex;
+    color: #ffffff;
+    padding: 10px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+
