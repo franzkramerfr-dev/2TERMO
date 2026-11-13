@@ -73,3 +73,13 @@ h3{
     margin: 0 12px 8px 0;
 
 }
+.galeria {
+    margin: 0;
+    padding: 24px;
+    background-color:#dedede;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.galeria img {
+    
+}
