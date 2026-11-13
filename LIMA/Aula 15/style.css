@@ -80,6 +80,16 @@ h3{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.galeria img {
-    
+.galeria-img img {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    border: 2px solid #ffffff;
+    border-radius: 300px;
+
+}
+
+.galeria ul {
+    text-decoration: none;
+    list-style: none;
 }
