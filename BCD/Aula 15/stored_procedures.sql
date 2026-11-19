@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS smartcoffee_procedures_bruno;
-CREATE DATABASE smartcoffee_procedures_bruno;
-USE smartcoffee_procedures_bruno;
+CREATE DATABASE smartcoffee_procedures_franz;
+USE smartcoffee_procedures_franz;
 
 CREATE TABLE cliente (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
