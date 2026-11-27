@@ -1,0 +1,23 @@
+-- USE smartcoffee_functions_triggers;
+
+-- -- ATIVIDADE AMPLIADA - AULAS 14 E 15
+-- -- Aluno:
+-- -- Turma:
+
+-- -- 1. Function calcular_total_item
+-- -- 2. Function classificar_fidelidade
+-- -- 3. Function calcular_desconto
+-- -- 4. Function situacao_estoque
+-- -- 5. Testar todas em SELECT
+-- -- 6. Criar auditoria_preco
+-- -- 7. Trigger AFTER UPDATE de preço
+-- -- 8. Trigger BEFORE UPDATE impedindo estoque negativo
+-- -- 9. Criar log_exclusao_produto
+-- -- 10. Trigger AFTER DELETE
+-- -- 11. Demonstrar operação bloqueada
+-- -- 12. Demonstrar histórico gerado automaticamente
+-- -- 13. SHOW TRIGGERS
+-- -- 14. SHOW CREATE TRIGGER
+-- -- 15. Explique: Function x Procedure x View x Trigger
+-- -- 16. Cite 3 regras em que CHECK/UNIQUE/FK seriam melhores que Trigger
+-- -- DESAFIO: crie uma automação própria e justifique a escolha do recurso.

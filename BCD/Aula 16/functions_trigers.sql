@@ -1,0 +1,371 @@
+-- Active: 1788519228847@@127.0.0.1@3306@smartcoffee_procedures_franz
+-- Function: Armazena uma rotina criada dentro do MYSQL que recebe parâmetros, executa uma lógica e devolve um valor com RETURN
+
+Exemplos de utilização:
+- Calculo de frete (valor do frete)
+- Escola (classificar médias com aprovado e reprovado)
+- Financeiro (calcular juros - valor corrigido)
+- Estoque (situação estoque - opções de checagem)
+
+-- Estrutura básica
+
+CREATE FUNCTION nome_funcao(parametro TIPO)
+RETURNS TIPO_DE_RETORNO
+DETERMINISTIC
+BEGIN
+    --PROCESSAMENTO
+    RETURN VALOR;
+END $$
+DELIMITER ; 
+
+-- OBS: RETURNS: INFORMA QUAL TIPO SERÁ DEVOLVIDO. RETURN INFORMA O VALOR DEVOLVIDO
+
+-- EX:1 Total de Item
+
+DELIMITER $$
+
+CREATE FUNCTION calcular_total_item
+(p_preco DECIMAL (10,2), p_quantidade INT)
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    RETURN p_preco * p_quantidade;
+END $$
+
+DELIMITER ;
+
+-- OBS: Agora a função pode ser usada como se fosse uma função nativa
+-- Apresentar o resultado da FUNCTION
+
+SELECT nome, preco, calcular_total_item(preco, 3) AS Total_3_Unidades
+FROM produto;
+
+-- EX 2: COM DECISÃO - BASE EM FIDELIDADE
+
+DELIMITER $$
+
+CREATE FUNCTION classificar_fidelidade
+(p_pontos INT)
+RETURNS varchar(20)
+DETERMINISTIC
+BEGIN
+    IF p_pontos >= 500 THEN
+        RETURN 'OURO';
+    ELSEIF p_pontos >= 200 THEN
+        RETURN 'PRATA';
+    ELSE 
+        RETURN 'BRONZE';
+    END IF;
+END $$
+
+DELIMITER ;
+
+SELECT nome, pontos_fidelidade, classificar_fidelidade (pontos_fidelidade) AS Nível
+FROM cliente;
+
+EX 3: EXEMPLO COM VÁRIAVEL LOCAL
+
+DELIMITER $$
+
+CREATE FUNCTION calcular_desconto (
+    p_valor DECIMAL (10,2),
+    p_pontos INT
+) 
+RETURNS DECIMAL (10,2)
+DETERMINISTIC
+BEGIN
+    DECLARE v_percentual DECIMAL (5,2);
+    IF p_pontos >= 500 THEN
+        SET v_percentual = 0.10;
+    ELSEIF p_pontos >= 200 THEN
+        SET v_percentual = 0.05;
+    ELSE
+        SET v_percentual = 0;
+    END IF;
+    RETURN p_valor * v_percentual;
+END $$
+
+DELIMITER ;
+
+-- OBS: DETERMINISTIC
+-- Uma função marcada como DETERMINISTIC declara que, para os mesmos valores de entrada, o resultado será o mesmo
+
+-- Comparações entre FUNCTION X PROCEDURE X VIEW
+-- VIEW: SELECT ... FROM view - consulta reutilizável - vw_pedidos_abertos
+-- PROCEDURE: CALL ... - processo com várias etapas - registrar_pedido
+-- -- FUNCTION: dentro da expressão / SELECT - cálculo ou classificação - calcular_desconto
+
+-- ATIVIDADE AMPLIADA - AULAS 14 E 15
+
+-- 1. Function calcular_total_item
+
+DELIMITER $$
+CREATE FUNCTION calcular_total_item2 (p_preco DECIMAL (10,2), p_quantidade INT)
+RETURNS DECIMAL (10,2)
+DETERMINISTIC
+BEGIN
+    RETURN p_preco * p_quantidade;
+END $$
+
+DELIMITER ;
+
+-- 2. Function classificar_fidelidade
+
+DELIMITER $$
+ 
+CREATE FUNCTION classificar_fidelidade (p_pontos INT)
+RETURNS varchar(20)
+DETERMINISTIC
+BEGIN
+    IF p_pontos >= 500 THEN
+        RETURN 'OURO';
+    ELSEIF p_pontos >=250 THEN
+        RETURN 'PRATA';
+    ELSE
+        RETURN 'BRONZE';
+    END IF;
+END $$
+
+DELIMITER ;
+
+SELECT nome,pontos_fidelidade, classificar_fidelidade (pontos_fidelidade) AS NÍVEL_PONTUAÇÃO FROM CLIENTE;
+
+
+
+-- 3. Function calcular_desconto
+
+DELIMITER $$
+
+CREATE FUNCTION calcular_desconto (p_valor DECIMAL(10,2), p_quantidade INT)
+RETURNS DECIMAL(5,2)
+DETERMINISTIC
+BEGIN
+    DECLARE V_PERCENTUAL DECIMAL(5,2);
+    IF P_PONTOS >= 500 THEN
+        SET V_PERCENTUAL = 0.15;
+    ELSEIF P_PONTOS >= 250 THEN
+        SET V_PERCENTUAL = 0.13;
+    ELSE
+        SET V_PERCENTUAL = 0;
+    END IF;
+    RETURN P_VALOR * V_PERCENTUAL;
+END $$
+
+DELIMITER ;
+
+SELECT CALCULAR_DESCONTO_PRODUTOS(200.00, 1200) AS VALOR_DESCONTO;
+
+
+
+
+
+-- 4. Function situacao_estoque
+
+
+DELIMITER $$
+
+CREATE FUNCTION SITUACAO_ESTOQUE (
+P_QUANTIDADE INT)
+
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+IF P_QUANTIDADE = 0 THEN
+RETURN 'SEM ESTOQUE';
+ELSEIF P_QUANTIDADE <= 10 THEN
+RETURN 'ESTOQUE BAIXO';
+ELSE
+RETURN 'ESTOQUE NORMAL';
+END IF;
+END $$
+
+DELIMITER;
+
+SELECT E. ID_PRODUTO, P.NOME AS PRODUTO, E.QUANTIDADE, SITUACAO_ESTOQUE(E.
+QUANTIDADE) AS STATUS_ESTOQUE FROM ESTOQUE AS E
+INNER JOIN PRODUTO AS P
+ON E.ID_PRODUTO = P.ID_PRODUTO
+ORDER BY ID_PRODUTO;
+
+
+-- TRIGGERS
+
+-- TRIGGER É UMA ROTINA ASSOCIADA A UMA TABELA QUE É EXECUTADA AUTOMATICAMENTE QUANDO OCORRE UM INSERT, UPDATE, DELETE
+-- APLICAÇÕES NO DIA-A-DIA
+-- AUDITORIA: REGISTRAR PRECO ANTIGO E NOVO SEMPRE QUE UM PRODUTO MUDA
+-- SEGURANÇA: REGISTRA EXCLUSÕES IMPORTANTES
+-- ESTOQUE: IMPEDIR QUANTIDADE NEGATIVA
+-- HOSPITAL: REGISTRAR ALTERAÇÕES EM DADOS CRITICOS
+-- FINANCEIRA: CRIAR HISTÓRICO DE MUDANÇA DE STATUS DE PAGAMENTOS
+
+-- EX 1: AUDITORIA DE PRECO
+
+CREATE TABLE AUDITORIA_PRECO (
+    ID_AUDITORIA INT AUTO_INCREMENT,
+    ID_PRODUTO INT NOT NULL,
+    PRECO_ANTERIOR DECIMAL(10,2),
+    PRECO_NOVO DECIMAL (10,2),
+    ALTERADO_EM DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT PK_ID_AUDITORIA PRIMARY KEY (ID_AUDITORIA),
+    CONSTRAINT FK_PRODUTO FOREIGN KEY (ID_PRODUTO) REFERENCES PRODUTO (ID_PRODUTO)
+);
+
+DELIMITER $$
+
+CREATE TRIGGER TRG_PRODUTO_PRECO_UPDATE
+AFTER UPDATE ON PRODUTO
+FOR EACH ROW
+BEGIN
+    IF OLD.PRECO <> NEW.PRECO THEN
+        INSERT INTO AUDITORIA_PRECO (ID_PRODUTO PRECO_ANTERIOR, PRECO_NOVO) VALUES (NEW.ID_PRODUTO, OLD.PRECO, NEW.PRECO);
+    END IF;
+END $$
+
+
+
+DELIMITER ;
+
+SELECT ID_PRODUTO, NOME, PRECO FROM PRODUTO
+WHERE ID_PRODUTO = 1;
+
+
+UPDATE PRODUTO
+SET PRECO = 10.50
+WHERE ID_PRODUTO = 1;
+
+
+SELECT * FROM AUDITORIA_PRECO
+ORDER BY ID AUDITORIA DESC
+
+-- -- OBS: BOA PRÁTICA - SEMPRE MOSTRE O ESTADO ANTES (BEFORE), EXECUTE A
+-- MUDANÇA E DEPOIS CONSULTE O ESTADO DEPOIS (AFTER)
+-- -- BEFORE antes de gravar validar estoque negativo
+-- -- AFTER depois de gravar registrar historico/auditoria
+-- INSERT (OLD nao) (OLD sim)
+-- UPDATE (OLD sim) (OLD sim)
+-- DELETE (OLD sim) (OLD nao)
+
+EX 2 - VALIDAÇÃO AUTOMÁTICA COM SIGNAL
+
+CREATE TRIGGER TRG_ESTOQUE_BEFORE_UPDATE
+BEFORE UPDATE ON ESTOQUE
+FOR EACH ROW
+BEGIN
+    IF NEW.QUANTIDADE < 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'ESTOQUE NÃO PODE FICAR NEGATIVO';
+    END IF;
+END $$
+
+DELIMITER ;
+
+-- EX 3: BEFORE INSERT - ANTES DE INSERIR DADOS
+
+DELIMITER $$
+
+CREATE TRIGGER TRG_PRODUTO_BEFORE_INSERT
+BEFORE INSERT ON PRODUTO
+FOR EACH ROW
+BEGIN
+IF NEW.PRECO <= 0 THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'PREÇO DEVE SER MAIOR QUE ZERO';
+END IF;
+END $$
+
+DELIMITER;
+
+SELECT * FROM produto;
+
+INSERT INTO PRODUTO (ID_CATEGORIA, NOME, PRECO, ATIVO) VALUES (1, 'Café Americano', -2.00, true)
+
+INSERT INTO PRODUTO (ID_CATEGORIA, NOME, PRECO, ATIVO) VALUES (1, 'Café Americano', 2.00, true)
+
+EX 4: EXCLUSÃO DE REGISTRO - AFTER DELETE
+
+CREATE TABLE LOG_EXCLUSAO_PRODUTO(
+    ID_LOG INT AUTO_INCREMENT,
+    ID_PRODUTO INT,
+    NOME_PRODUTO VARCHAR(120),
+    EXCLUIDO_EM DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT PK_ID_LOG PRIMARY KEY (ID_LOG),
+    CONSTRAINT FK_PRODUTO_ID FOREIGN KEY (ID_PRODUTO) REFERENCES PRODUTO (ID_PRODUTO) 
+);
+
+DELIMITER $$
+
+CREATE TRIGGER TRG_PRODUTO_AFTER_DELETE
+AFTER DELETE ON PRODUTO
+FOR EACH ROW
+BEGIN 
+    INSERT INTO LOG_EXCLUSAO_PRODUTO (ID_PRODUTO, NOME_PRODUTO)
+    VALUES(OLD.ID_PRODUTO, OLD_NOME);
+END $$
+
+DELIMITER ;
+
+SELECT * FROM log_exclusao_produto;
+
+INSERT INTO LOG_EXCLUSAO_PRODUTO(ID_PRODUTO, NOME_PRODUTO, EXCLUIDO_EM) VALUES (1, 'TESTE', now());
+
+SELECT * FROM log_exclusao_produto;
+
+DELETE FROM log_exclusao_produto
+WHERE ID_LOG 
+= 1;
+
+-- COMO GERENCIAR
+
+SHOW TRIGGERS;
+
+SHOW CREATE TRIGGER NOME_TRIGGER;
+
+DROP TRIGGER IF EXISTS NOME_TRIGGER;
+
+-- -- 6. Criar auditoria_preco
+
+CREATE TABLE AUDITORIA_PRECO (
+    ID_AUDITORIA INT AUTO_INCREMENT,
+    ID_PRODUTO INT NOT NULL,
+    PRECO_ANTERIOR DECIMAL(10,2),
+    PRECO_NOVO DECIMAL (10,2),
+    ALTERADO_EM DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT PK_ID_AUDITORIA PRIMARY KEY (ID_AUDITORIA),
+    CONSTRAINT FK_PRODUTO FOREIGN KEY (ID_PRODUTO) REFERENCES PRODUTO (ID_PRODUTO)
+);
+
+-- -- 7. Trigger AFTER UPDATE de preço
+
+CREATE TRIGGER TRG_PRODUTO_PRECO_UPDATE
+AFTER UPDATE ON PRODUTO
+FOR EACH ROW
+BEGIN
+    IF OLD.PRECO <> NEW.PRECO THEN
+        INSERT INTO AUDITORIA_PRECO (ID_PRODUTO PRECO_ANTERIOR, PRECO_NOVO) VALUES (NEW.ID_PRODUTO, OLD.PRECO, NEW.PRECO);
+    END IF;
+END $$
+
+
+
+-- -- 8. Trigger BEFORE UPDATE impedindo estoque negativo
+
+
+
+-- -- 9. Criar log_exclusao_produto
+
+-- -- 10. Trigger AFTER DELETE
+
+-- -- 11. Demonstrar operação bloqueada
+
+-- -- 12. Demonstrar histórico gerado automaticamente
+
+-- -- 13. SHOW TRIGGERS
+
+-- -- 14. SHOW CREATE TRIGGER
+
+-- -- 15. Explique: Function x Procedure x View x Trigger
+
+-- -- 16. Cite 3 regras em que CHECK/UNIQUE/FK seriam melhores que Trigger
+
+-- -- DESAFIO: crie uma automação própria e justifique a escolha do recurso.
+
